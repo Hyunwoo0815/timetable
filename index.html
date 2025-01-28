@@ -1,66 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3349170217265964" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website - Welcome</title>
+    <title>대한민국 교통정보</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
         }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        main {
+        .container {
             max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
+            width: 90%;
+            margin: 50px auto;
             text-align: center;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        a {
-            display: inline-block;
-            margin: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            color: white;
-            background-color: #007bff;
-            text-decoration: none;
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        form {
+            margin-top: 30px;
+        }
+        input[type="text"] {
+            width: 45%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            margin: 10px;
         }
-        a:hover {
-            background-color: #0056b3;
+        button {
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-            background-color: #f1f1f1;
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
         }
     </style>
+    <script>
+        function searchSchedule(event) {
+            event.preventDefault(); // 폼 기본 동작 방지
+
+            // 사용자 입력값 가져오기
+            const departure = document.getElementById('departure').value.trim();
+            const arrival = document.getElementById('arrival').value.trim();
+
+            if (!departure || !arrival) {
+                alert('출발지와 도착지를 모두 입력해주세요.');
+                return;
+            }
+
+            // 파일명 생성
+            const filename = `${departure}에서_${arrival}가는_버스_시간표.html`;
+
+            // 해당 페이지로 이동
+            window.location.href = filename;
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>Explore our pages and find what you're looking for!</p>
-    </header>
-    <main>
-        <h2>Explore Our Pages</h2>
-        <div>
-            <a href="page1.html">Page 1</a>
-            <a href="page2.html">Page 2</a>
-            <a href="page3.html">Page 3</a>
-            <!-- 필요하면 더 많은 페이지 링크를 추가 -->
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <h1>대한민국 교통정보</h1>
+        <p>원하는 출발지와 도착지를 입력하여 버스 시간표를 확인하세요.</p>
+        <form onsubmit="searchSchedule(event)">
+            <input type="text" id="departure" placeholder="출발지 입력 (예: 서울)">
+            <input type="text" id="arrival" placeholder="도착지 입력 (예: 부산)">
+            <button type="submit">시간표 검색</button>
+        </form>
+    </div>
 </body>
 </html>
