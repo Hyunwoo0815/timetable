@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 #DaumWebMasterTool:9f9df3708f80cf7ec39ebf7e6e2fe5bb026310ad3f1a0e091fca91e5d229c961:hx7pwnlQmzjBbBKRE29GcA==
+
+<meta name="naver-site-verification" content="3f105a1e67acd0844be9db855a0bb1cfdf9d20d4" />
