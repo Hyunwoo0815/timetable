@@ -59,22 +59,26 @@
             background: #0056b3;
             transform: scale(1.05);
         }
-        .link-button {
-            display: block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease;
+        .terminal-list {
+            margin-top: 30px;
+            text-align: left;
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
         }
-        .link-button:hover {
-            background: #218838;
-            transform: scale(1.05);
+        .terminal-list h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .terminal-list a {
+            display: block;
+            font-size: 1.2rem;
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .terminal-list a:hover {
+            text-decoration: underline;
         }
     </style>
     <script>
@@ -102,16 +106,23 @@
     <div class="container">
         <h1>대한민국 교통정보</h1>
         <p>원하는 출발지와 도착지를 입력하여 버스 시간표를 확인하세요.</p>
+
+        <!-- 검색 기능 -->
         <form onsubmit="searchSchedule(event)">
             <input type="text" id="departure" placeholder="출발지 입력 (예: 서울)">
             <input type="text" id="arrival" placeholder="도착지 입력 (예: 부산)">
             <button type="submit">시간표 검색</button>
         </form>
 
-        <!-- 추가된 버튼 -->
-        <a class="link-button" href="https://www.issue-manager.co.kr/%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C-%EB%B6%80%EC%82%B0%EA%B0%80%EB%8A%94-%EB%B2%84%EC%8A%A4-%EC%8B%9C%EA%B0%84%ED%91%9C" target="_blank">
-            🚍 서울-부산 버스 시간표 보기
-        </a>
+        <!-- 주요 버스 터미널 링크 -->
+        <div class="terminal-list">
+            <h2>🚏 주요 도시 버스 터미널</h2>
+            <a href="서울.html">서울 버스 터미널 시간표</a>
+            <a href="부산.html">부산 버스 터미널 시간표</a>
+            <a href="대구.html">대구 버스 터미널 시간표</a>
+            <a href="광주.html">광주 버스 터미널 시간표</a>
+            <a href="인천.html">인천 버스 터미널 시간표</a>
+        </div>
     </div>
 </body>
 </html>
